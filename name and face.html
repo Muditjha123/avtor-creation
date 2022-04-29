@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name and face templet api by Mudit jha</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgb(62, 193, 171);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        section{
+            justify-content: center;
+            /* display: flex; */
+            width: 100%;
+            height: 100%;
+        }
+        section h1{
+              text-shadow: 2px 2px 5px #9534c9;
+              text-align: center;  
+              margin-top: 5px;      
+            }
+       
+        .centerDiv{
+            position: absolute;
+            margin: 75px 15px 119px 200px;
+            padding: 45px;
+            box-sizing: content-box;
+            border: 2px solid red;
+            background-color: rgb(193, 104, 181);
+            color: white;
+            justify-self: center;
+            width: 50%;
+            height: 65%;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            /* justify-content: center; */
+        }
+        .details{
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .details lable{
+            font-size: 1.4rem;
+        }
+        .details input{
+            padding: 10px;
+            background-color:#ff6b81;
+            color: white;
+            font-size: large;
+        }
+        .details input[type-text]:focus{
+            border:3px solid #555
+        }
+        .imgdiv{
+            margin: 30px 0;
+           align-items: center;
+        }
+        button{
+            background: #3498db;
+            width: 180px;
+            padding: 4px 0;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            background-color: #f1c40f ;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Plese Enter your name to show your Avtor</h1>
+        <div class="centerDiv">
+            <div class="details">
+                <lable>Enter Your Name</lable>
+                <input type="text" name="" id="nameid">
+
+            </div>
+            <div class="imgdiv">
+                <img src="event image2.jpg" width="220px" height="200px" class="imgchange">
+            </div>
+            <button>CLICK ME</button>
+        </div>
+    </section>
+   
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(`button`).click(function(){
+                const name =$('#nameid').val();
+                alert(name);
+             $('.imgchange').attr('src',`https://joeschmoe.io/api/v1/${name}`)
+            })
+        })
+    </script>
+</body>
+</html>
